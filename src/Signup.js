@@ -36,6 +36,10 @@ const SignupForm = () => {
       if (errors) {
         setErrors(errors);
         setMessage("");
+      } else if (
+        message === "Username already exists. Please pick another one."
+      ) {
+        setMessage(message);
       } else if (message === "Validation failed") {
         setErrors([]);
         setMessage("Please correct the validation errors.");

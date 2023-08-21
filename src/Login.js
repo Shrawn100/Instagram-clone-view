@@ -22,6 +22,9 @@ const LoginForm = () => {
     setUsername("testUser");
     setPassword("testUser");
   };
+  const handleSignUpClick = async () => {
+    navigate("/signup");
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -95,9 +98,7 @@ const LoginForm = () => {
         )}
         {message && <p className="error-msg-p">{message}</p>}
       </form>
-      <button onClick={navigate("/signup")}>
-        Don't have an account? Signup
-      </button>
+      <button onClick={handleSignUpClick}>Don't have an account? Signup</button>
     </div>
   );
 };
