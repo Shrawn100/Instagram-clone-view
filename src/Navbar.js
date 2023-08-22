@@ -1,9 +1,9 @@
 function Navbar() {
   return (
-    <nav>
-      <div>
+    <nav className="navbar">
+      <div className="navbar-upper-half">
         <div className="heading-container">
-          <h1 className="heading">Instagram</h1>
+          <h1 className="instagram-heading">Instagram</h1>
         </div>
         <div>Home</div>
         <div>Search</div>
