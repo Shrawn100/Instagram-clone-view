@@ -4,6 +4,7 @@ import App from "./App";
 import LoginForm from "./Login";
 import SignupForm from "./Signup";
 import Home from "./Home";
+import Profile from "./Profile";
 function Router() {
   return (
     <BrowserRouter>
@@ -11,6 +12,7 @@ function Router() {
         <Route path="/" element={<LoginForm />} />
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
