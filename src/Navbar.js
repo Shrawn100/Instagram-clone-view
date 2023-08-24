@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav className="navbar">
@@ -12,6 +13,7 @@ function Navbar() {
         <div>Messages</div>
         <div>Notifications</div>
         <div>Create</div>
+        <Link to="/profile">Profile</Link>
       </div>
       <div>More</div>
     </nav>

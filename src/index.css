@@ -20,7 +20,8 @@ code {
   height: 100vh;
   border: 1px solid rgb(202, 202, 202);
   box-sizing: border-box;
-  max-width: 20vw;
+  max-width: 17vw;
+  width: 100%;
 }
 .instagram-heading {
   margin: 0;
@@ -31,4 +32,25 @@ code {
   justify-content: space-around;
   font-size: 18px;
   height: 50vh;
+}
+
+/* Profile page */
+
+.profile-page-wrapper-one {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid red;
+}
+
+.profile-page-wrapper-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+.profile-page-wrapper-three {
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid red;
 }
