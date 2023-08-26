@@ -6,7 +6,7 @@ function Navbar() {
         <div className="heading-container">
           <h1 className="instagram-heading">Instagram</h1>
         </div>
-        <div>Home</div>
+        <Link to="/home">Home</Link>
         <div>Search</div>
         <div>Explore</div>
         <div>Reels</div>

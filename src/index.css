@@ -50,7 +50,18 @@ code {
   width: 100%;
 }
 .profile-page-wrapper-three {
+  padding: 50px;
   width: 100%;
   max-width: 900px;
   border: 1px solid red;
+  display: flex;
+  gap: 40px;
+}
+.profile-page-wrapper-four {
+  display: flex;
+  flex-direction: column;
+}
+.profile-stats {
+  display: flex;
+  gap: 20px;
 }

@@ -5,9 +5,13 @@ import Navbar from "./Navbar";
 function Profile() {
   const [responseData, setResponseData] = useState(null);
   const [followers, setFollowers] = useState([]);
+  const [followerCount, setFollowerCount] = useState();
+  const [followingCount, setFollowingCount] = useState();
   const [following, setFollowing] = useState([]);
   const [displayName, setDisplayname] = useState("");
   const [posts, setPosts] = useState([]);
+  const [postsCount, setPostsCount] = useState();
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -23,9 +27,12 @@ function Profile() {
           console.log(response.data.userdata);
           setResponseData(response.data.userdata);
           setFollowers(response.data.userdata.followers);
+          setFollowerCount(response.data.userdata.followers.length);
           setFollowing(response.data.userdata.follwing);
+          setFollowingCount(response.data.userdata.following.length);
           setDisplayname(response.data.userdata.name);
           setPosts(response.data.userdata.posts);
+          setPostsCount(response.data.userdata.posts.length);
         })
         .catch((error) => {
           console.error("Error fetching :", error);
@@ -41,9 +48,16 @@ function Profile() {
       {responseData ? (
         <div className="profile-page-wrapper-two">
           <div className="profile-page-wrapper-three">
-            <div>upper section</div>
-            <div>stories section</div>
-            <div>posts section </div>
+            <div className="profile-picture">Profile pic</div>
+            <div className="profile-page-wrapper-four">
+              <div>{displayName}</div>
+              <div className="profile-stats">
+                <div> {postsCount} posts</div>
+                <div>{followerCount} followers</div>
+                <div>{followingCount} following</div>
+              </div>
+              <div>posts section </div>
+            </div>
           </div>
         </div>
       ) : (
