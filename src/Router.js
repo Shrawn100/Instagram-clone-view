@@ -5,6 +5,7 @@ import LoginForm from "./Login";
 import SignupForm from "./Signup";
 import Home from "./Home";
 import Profile from "./Profile";
+import Create from "./Create";
 function Router() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function Router() {
         <Route path="/signup" element={<SignupForm />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/create" element={<Create />} />
       </Routes>
     </BrowserRouter>
   );
