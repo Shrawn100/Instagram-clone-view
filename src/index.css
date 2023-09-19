@@ -13,6 +13,19 @@ code {
 }
 /* DragDropComponent.css */
 
+.create-page-wrapper-one {
+  display: flex;
+  border: 1px solid green;
+}
+.create-page-wrapper-two {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid blue;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .drag-drop-container {
   width: 100%;
   height: 300px;
@@ -42,6 +55,27 @@ ul {
 li {
   margin-bottom: 5px;
 }
+.open-folder-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  border: 1px solid red;
+}
+.image-previews {
+  display: flex;
+  flex-direction: column;
+
+  gap: 40px;
+}
+.image-previews > img {
+  width: 100%;
+}
+
+/* Navbar */
 
 .navbar {
   display: flex;
@@ -63,15 +97,6 @@ li {
   justify-content: space-around;
   font-size: 18px;
   height: 50vh;
-}
-.open-folder-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 10px;
 }
 
 /* Profile page */
@@ -104,4 +129,16 @@ li {
 .profile-stats {
   display: flex;
   gap: 20px;
+}
+
+dialog {
+  z-index: 10;
+  margin-top: auto;
+  background: white;
+  border: none;
+  border-radius: 1rem;
+  width: 600px;
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 60%);
 }

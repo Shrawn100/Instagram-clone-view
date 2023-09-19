@@ -1,5 +1,27 @@
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import Create from "./Create";
 function Navbar() {
+  const dialogRef = useRef(null);
+
+  function handleDialogClick() {
+    if (dialogRef.current) {
+      dialogRef.current.showModal();
+    }
+  }
+  function handleCloseClick(e) {
+    if (dialogRef.current) {
+      const dialogDimensions = dialogRef.current.getBoundingClientRect();
+      if (
+        e.clientX < dialogDimensions.left ||
+        e.clientX > dialogDimensions.right ||
+        e.clientY < dialogDimensions.top ||
+        e.clientY > dialogDimensions.bottom
+      ) {
+        dialogRef.current.close();
+      }
+    }
+  }
   return (
     <nav className="navbar">
       <div className="navbar-upper-half">
@@ -12,7 +34,10 @@ function Navbar() {
         <div>Reels</div>
         <div>Messages</div>
         <div>Notifications</div>
-        <div>Create</div>
+        <dialog onClick={handleCloseClick} ref={dialogRef}>
+          <Create />
+        </dialog>
+        <button onClick={handleDialogClick}>Create</button>
         <Link to="/profile">Profile</Link>
       </div>
       <div>More</div>
