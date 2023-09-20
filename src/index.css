@@ -13,23 +13,32 @@ code {
 }
 /* DragDropComponent.css */
 
-.create-page-wrapper-one {
-  display: flex;
-  border: 1px solid green;
+dialog {
+  border: 1px solid red;
 }
 .create-page-wrapper-two {
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
+
+  box-sizing: border-box;
   width: 100%;
   justify-content: center;
   align-items: center;
 }
-
+.create-modal-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 50px;
+  background-color: rgb(204, 204, 204);
+  padding: 10px 20px 10px 20px;
+}
 .drag-drop-container {
   width: 100%;
   height: 300px;
   border: 2px dashed #ccc;
+  box-sizing: border-box;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -63,7 +72,6 @@ li {
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 10px;
-  border: 1px solid red;
 }
 .image-previews {
   display: flex;
@@ -138,7 +146,9 @@ dialog {
   border: none;
   border-radius: 1rem;
   width: 600px;
+  min-height: 600px;
   max-height: 80vh;
+  padding: 0;
 }
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 60%);

@@ -22,14 +22,17 @@ function Navbar() {
         e.clientY > dialogDimensions.bottom
       ) {
         dialogRef.current.close();
-        if (
-          dialogDimensions.left === 0 ||
-          dialogDimensions.right === 0 ||
-          dialogDimensions.top === 0 ||
-          dialogDimensions.bottom === 0
-        ) {
-          dialogRef.current.showModal();
-        }
+      }
+      if (
+        dialogDimensions.left === 0 ||
+        dialogDimensions.right === 0 ||
+        dialogDimensions.top === 0 ||
+        dialogDimensions.bottom === 0
+      ) {
+        dialogRef.current.showModal();
+      }
+      if (e.target.className === "close-modal") {
+        dialogRef.current.close();
       }
     }
   }
@@ -46,7 +49,7 @@ function Navbar() {
         <div>Messages</div>
         <div>Notifications</div>
         <dialog onClick={handleCloseClick} ref={dialogRef}>
-          <Create />
+          <Create dialogRef={dialogRef} />
         </dialog>
         <button onClick={handleDialogClick}>Create</button>
         <Link to="/profile">Profile</Link>
